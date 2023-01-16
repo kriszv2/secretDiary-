@@ -4,9 +4,13 @@ class SecretDiary{
 //   - unlock()
 //   - addEntry()
 //   - getEntries()
+constructor(newEntries){
+    this.newEntries = newEntries;
 
 
-entries=[];
+}
+
+// entries=[];
 
 isLocked = true;
     lock() {
@@ -18,25 +22,26 @@ isLocked = true;
 
 
 addEntry(str){
-    if(this.isLocked===true){
-        throw new Error("Diary is locked!");
-    }
-    try{
-        this.entries.push(str);
-    }catch(e){
-        console.log(e);
-    }
+    // if(this.isLocked===true){
+    //     throw new Error("Diary is locked!");
+    // }
+    // try{
+        this.newEntries.addEntry(str);
+        return this.newEntries.getEntries();
+    // }catch(e){
+    //     console.log(e);
+    // }
 }
 
-getEntries(){
-    if(this.isLocked===true){
-        throw new Error("Diary is locked!");
-    }
-    try{
-        console.log(this.entries);
-    }catch(e){
-        console.log(e);
-    }
-}
+// getEntries(){
+//     if(this.isLocked===true){
+//         throw new Error("Diary is locked!");
+//     }
+//     try{
+//         console.log(this.entries);
+//     }catch(e){
+//         console.log(e);
+//     }
+// }
 }
 module.exports = SecretDiary;
