@@ -10,10 +10,10 @@ entries=[];
 
 isLocked = true;
     lock() {
-        return !this.isLocked;
+      this.isLocked = true;
   }
     unlock() {
-        return !this.isLocked;
+        this.isLocked = false;
   }
 
 
@@ -33,7 +33,7 @@ getEntries(){
         throw new Error("Diary is locked!");
     }
     try{
-        console.log(entries)
+        console.log(this.entries);
     }catch(e){
         console.log(e);
     }
